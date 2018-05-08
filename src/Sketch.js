@@ -82,7 +82,7 @@ class Sketch {
      * @return {this}
      */
     save(file) {
-        this.queue.then(() => {
+        return this.queue.then(() => {
             const pagesFolder = this.repo.folder('pages');
 
             this.document.pages = this.pages.map(page => {
@@ -118,8 +118,6 @@ class Sketch {
                     });
             });
         });
-
-        return this;
     }
 }
 
